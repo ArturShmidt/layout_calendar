@@ -1,8 +1,9 @@
-@import 'var';
+@import 'vars';
 
 @each $day, $i in $week-days {
+  $visual-index: if($i == 1, 6, $i - 2);
   .calendar--start-day-#{$day} .calendar__day:nth-child(1) {
-    margin-left: #{($i - 1) * ($day-size + $gap-size)};
+    margin-left: #{$visual-index * ($day-size + $gap-size)};
   }
 }
 
